@@ -1,0 +1,43 @@
+package com.example.aufgabe13;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+public class MainActivity extends Activity implements View.OnClickListener{
+    Button btnMenu1;
+    Button btnMenu2;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        btnMenu1 = (Button)findViewById(R.id.btnMenu1);
+        btnMenu1.setOnClickListener(this);
+        btnMenu2 = (Button)findViewById(R.id.btnMenu2);
+        btnMenu2.setOnClickListener(this);
+        }
+
+    @Override
+    public void onClick(View v) {
+        switch(v.getId()){
+            case R.id.btnMenu1:
+                Intent intent1 = new Intent(this, activity_menu1.class);
+                startActivity(intent1);
+            break;
+
+            case R.id.btnMenu2:
+                Intent intent2 = new Intent(this, activity_menu2.class);
+                startActivity(intent2);
+            break;
+        }
+
+        }
+    }
+
+
+
+
